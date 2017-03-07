@@ -1,4 +1,4 @@
-# S3 Basic Auth -> Drew's Fork
+# S3 Basic Auth -> 🚧 Drew's Fork 🚧
 
 This is a fork from the original [s3-basic-auth](https://github.com/aesopwolf/s3-basic-auth). This fork uses the popular [aws4](https://github.com/mhart/aws4) package for signing requests. I ran into a signing error when trying to use s3-basic-auth and didn't feel like trying to figure it out manually.
 
@@ -19,8 +19,15 @@ var protectedProxy = s3BasicAuth({
 })
 ```
 
+### AWS credentials
+I prefer to use [dotenv](https://www.npmjs.com/package/dotenv) but as long as `process.env` can read these two variables you will be good to go.
+```
+export AWS_SECRET_ACCESS_KEY="<your-secret-access-key>"
+export AWS_ACCESS_KEY_ID="<your-access-key-id>"
+```
 
-
+Original readme below ⬇️
+--- 
 Express middleware for adding Basic Authentication to an Amazon S3 Bucket
 
 Requires Node.js v6.0.0 or greater
