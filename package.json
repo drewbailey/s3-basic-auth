@@ -1,5 +1,6 @@
 {
   "name": "s3-basic-auth",
+  "version": "2.0.0",
   "description": "Express middleware to protect an Amazon S3 bucket with Basic Authentication",
   "keywords": [
     "basic",
