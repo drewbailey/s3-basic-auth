@@ -1,4 +1,25 @@
-# S3 Basic Auth
+# S3 Basic Auth -> Drew's Fork
+
+This is a fork from the original [s3-basic-auth](https://github.com/aesopwolf/s3-basic-auth). This fork uses the popular [aws4](https://github.com/mhart/aws4) package for signing requests. I ran into a signing error when trying to use s3-basic-auth and didn't feel like trying to figure it out manually.
+
+
+## API differences
+
+The main difference is you no longer need to specify a host name, just a bucket. AWS credentials are also pulled from the environment following aws4's recommended setup.
+
+This also pulls the absolute path as the key so www.mysite.com/test/index.html will try to find my-private-bucket/test/index.html instead of just my-private-bucket/index.html
+
+
+```js
+var protectedProxy = s3BasicAuth({
+  bucket: 'my-private-bucket'
+  expires: 10, // seconds that the presigned URL is valid for
+  credentials: 'foo:bar', // username:password
+  mode: 'proxy' // 'proxy', 'redirect', 'presignedUrl' are valid options
+})
+```
+
+
 
 Express middleware for adding Basic Authentication to an Amazon S3 Bucket
 
